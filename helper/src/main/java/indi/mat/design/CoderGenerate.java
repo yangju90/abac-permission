@@ -54,7 +54,7 @@ public class CoderGenerate {
         strategy.setNaming(NamingStrategy.underline_to_camel);
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
 
-        strategy.setSuperEntityClass("indi.mat.work.project.model.BaseModel");
+        strategy.setSuperEntityClass("indi.mat.design.model.BaseModel");
         strategy.setEntityLombokModel(false);
         strategy.setRestControllerStyle(true);
         // 公共父类
