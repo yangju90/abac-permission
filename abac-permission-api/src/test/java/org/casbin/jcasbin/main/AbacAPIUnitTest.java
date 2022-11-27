@@ -14,7 +14,6 @@
 
 package org.casbin.jcasbin.main;
 
-import org.casbin.jcasbin.util.Util;
 import org.junit.Test;
 
 import static org.casbin.jcasbin.main.TestUtil.testDomainEnforce;

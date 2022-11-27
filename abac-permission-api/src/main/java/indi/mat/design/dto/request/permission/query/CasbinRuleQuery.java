@@ -3,7 +3,6 @@ package indi.mat.design.dto.request.permission.query;
 
 import indi.mat.design.domain.model.permission.CasbinRule;
 import indi.mat.design.dto.request.BaseQuery;
-import indi.mat.design.dto.request.permission.form.CasbinRuleForm;
 
 /**
  * <p>

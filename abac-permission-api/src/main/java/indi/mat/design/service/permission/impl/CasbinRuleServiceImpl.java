@@ -5,7 +5,6 @@ import indi.mat.design.domain.model.permission.CasbinRule;
 import indi.mat.design.domain.persist.permission.CasbinRuleMapper;
 import indi.mat.design.dto.request.permission.form.CasbinRuleForm;
 import indi.mat.design.dto.request.permission.query.CasbinRuleQuery;
-import indi.mat.design.service.BaseService;
 import indi.mat.design.service.BaseServiceImpl;
 import indi.mat.design.service.permission.ICasbinRuleService;
 import org.springframework.stereotype.Service;
@@ -16,7 +15,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * <p>
- *  服务实现类
+ * 服务实现类
  * </p>
  *
  * @author Mat
@@ -25,10 +24,10 @@ import org.slf4j.LoggerFactory;
 @Service
 public class CasbinRuleServiceImpl extends BaseServiceImpl<CasbinRule, CasbinRuleForm, CasbinRuleQuery> implements ICasbinRuleService {
 
-   private static final Logger logger = LoggerFactory.getLogger(CasbinRuleServiceImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(CasbinRuleServiceImpl.class);
 
-   @Autowired
-   private CasbinRuleMapper mapper;
+    @Autowired
+    private CasbinRuleMapper mapper;
 
     @Override
     protected BaseMapper<CasbinRule> mapper() {

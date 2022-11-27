@@ -17,7 +17,6 @@ package org.casbin.jcasbin.main;
 import org.casbin.jcasbin.rbac.RoleManager;
 import org.junit.Test;
 
-import java.util.Arrays;
 import java.util.List;
 
 import static org.casbin.jcasbin.main.TestUtil.testDomainEnforce;
