@@ -14,4 +14,4 @@ CREATE TABLE `role` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `ix_role_name` (`name`),
   KEY `ix_role_path_string` (`path_string`)
-) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Role';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Role';
