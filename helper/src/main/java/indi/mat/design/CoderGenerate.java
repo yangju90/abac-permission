@@ -11,12 +11,9 @@ public class CoderGenerate {
 
     static String author = "Mat";
 
-    static String moduleName = "casbin";
+    static String moduleName = "user";
 
-    static String  [] tableName = {"casbin_rule"};
-
-
-
+    static String[] tableName = {"t_casbin_rule", "t_role"};
 
     public static void main(String[] args) {
         // 代码生成器
@@ -62,10 +59,10 @@ public class CoderGenerate {
         strategy.setSuperServiceClass("indi.mat.design.service.base.IBaseService");
         strategy.setSuperServiceImplClass("indi.mat.design.service.base.BaseService");
         // 写于父类中的公共字段
-        strategy.setSuperEntityColumns("id","deleted","op_user","op_date","last_op_user","last_op_date");
+        strategy.setSuperEntityColumns("id","deleted","in_user","in_date","last_edit_user","last_edit_date");
         strategy.setInclude(tableName);
         strategy.setControllerMappingHyphenStyle(false);
-        strategy.setTablePrefix("indi_");
+        strategy.setTablePrefix("t_");
         mpg.setStrategy(strategy);
         mpg.setTemplateEngine(new NsFreemarkerTemplateEngine(codePath));
         mpg.execute();

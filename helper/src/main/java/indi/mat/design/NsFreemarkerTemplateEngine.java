@@ -110,16 +110,16 @@ public class NsFreemarkerTemplateEngine extends FreemarkerTemplateEngine {
     private  void setFormAndQuery(Map objectMap, Map<String, String> pathInfo){
         Map<String,Object> packageMap = (HashMap)objectMap.get("package");
         String moduleName = packageMap.get("ModuleName")+"";
-        packageMap.put("BaseQuery","indi.mat.work.project.dto.request.BaseQuery");
-        packageMap.put("BaseForm","indi.mat.work.project.dto.request.BaseForm");
+        packageMap.put("BaseQuery","indi.mat.design.dto.request.BaseQuery");
+        packageMap.put("BaseForm","indi.mat.design.dto.request.BaseForm");
 
-        packageMap.put("Entity","indi.mat.work.project.model."+moduleName);
-        packageMap.put("Mapper","indi.mat.work.project.persist."+moduleName);
-        packageMap.put("ServiceImpl","indi.mat.work.project.service"+moduleName+".impl");
-        packageMap.put("Service","indi.mat.work.project.service."+moduleName);
-        packageMap.put("Controller","indi.mat.work.project.controller."+moduleName);
-        packageMap.put("Query","indi.mat.work.project.dto.request."+moduleName+".query");
-        packageMap.put("Form","indi.mat.work.project.dto.request."+moduleName+".form");
+        packageMap.put("Entity","indi.mat.design.model."+moduleName);
+        packageMap.put("Mapper","indi.mat.design.persist."+moduleName);
+        packageMap.put("ServiceImpl","indi.mat.design.service"+moduleName+".impl");
+        packageMap.put("Service","indi.mat.design.service."+moduleName);
+        packageMap.put("Controller","indi.mat.design.controller."+moduleName);
+        packageMap.put("Query","indi.mat.design.dto.request."+moduleName+".query");
+        packageMap.put("Form","indi.mat.design.dto.request."+moduleName+".form");
 
         pathInfo.put("mapper_path",codePath+"\\persist\\"+moduleName);
         pathInfo.put("entity_path",codePath+"\\model\\"+moduleName);
