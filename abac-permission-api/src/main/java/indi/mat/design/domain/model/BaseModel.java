@@ -1,5 +1,7 @@
 package indi.mat.design.domain.model;
 
+import com.baomidou.mybatisplus.annotation.FieldStrategy;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.v3.oas.annotations.media.Schema;
 
@@ -21,11 +23,13 @@ public class BaseModel {
 
     // 插入记录的用户名
     @Schema(accessMode = Schema.AccessMode.READ_ONLY)
+    @TableField(updateStrategy = FieldStrategy.NOT_NULL)
     private String inUser;
 
     // 插入记录的时间
     @Schema(accessMode = Schema.AccessMode.READ_ONLY)
-    private Date inDate;
+    @TableField(updateStrategy = FieldStrategy.NOT_NULL)
+    private Long inDate;
 
     // 最后一次修改的用户名
     @Schema(accessMode = Schema.AccessMode.READ_ONLY)
@@ -33,7 +37,7 @@ public class BaseModel {
 
     // 最后一次修改的时间
     @Schema(accessMode = Schema.AccessMode.READ_ONLY)
-    private Date lastEditDate;
+    private Long lastEditDate;
 
 
     public Long getId() {
@@ -60,11 +64,11 @@ public class BaseModel {
         this.inUser = inUser;
     }
 
-    public Date getInDate() {
+    public Long getInDate() {
         return inDate;
     }
 
-    public void setInDate(Date inDate) {
+    public void setInDate(Long inDate) {
         this.inDate = inDate;
     }
 
@@ -76,11 +80,11 @@ public class BaseModel {
         this.lastEditUser = lastEditUser;
     }
 
-    public Date getLastEditDate() {
+    public Long getLastEditDate() {
         return lastEditDate;
     }
 
-    public void setLastEditDate(Date lastEditDate) {
+    public void setLastEditDate(Long lastEditDate) {
         this.lastEditDate = lastEditDate;
     }
 }
