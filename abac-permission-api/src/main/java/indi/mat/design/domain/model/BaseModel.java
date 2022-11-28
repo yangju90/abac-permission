@@ -1,11 +1,10 @@
 package indi.mat.design.domain.model;
 
 import com.baomidou.mybatisplus.annotation.FieldStrategy;
+import com.baomidou.mybatisplus.annotation.OrderBy;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.v3.oas.annotations.media.Schema;
-
-import java.util.Date;
 
 /**
  * @author Mat
@@ -36,6 +35,7 @@ public class BaseModel {
     private String lastEditUser;
 
     // 最后一次修改的时间
+    @OrderBy
     @Schema(accessMode = Schema.AccessMode.READ_ONLY)
     private Long lastEditDate;
 

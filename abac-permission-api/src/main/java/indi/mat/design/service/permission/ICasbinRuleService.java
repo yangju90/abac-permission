@@ -4,6 +4,7 @@ import indi.mat.design.domain.model.permission.CasbinRule;
 import indi.mat.design.dto.request.permission.form.CasbinRuleForm;
 import indi.mat.design.dto.request.permission.query.CasbinRuleQuery;
 import indi.mat.design.service.BaseService;
+import org.casbin.jcasbin.model.Model;
 
 /**
  * <p>
@@ -15,4 +16,5 @@ import indi.mat.design.service.BaseService;
  */
 public interface ICasbinRuleService extends BaseService<CasbinRule, CasbinRuleForm, CasbinRuleQuery> {
 
+    String[] loadPolicy(Model model);
 }

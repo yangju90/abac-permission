@@ -6,6 +6,8 @@ import indi.mat.design.dto.request.permission.form.CasbinRuleForm;
 import indi.mat.design.dto.request.permission.query.CasbinRuleQuery;
 import indi.mat.design.dto.response.Response;
 import indi.mat.design.service.permission.ICasbinRuleService;
+import org.casbin.adapter.MybatisAdapter;
+import org.casbin.jcasbin.main.Enforcer;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,8 @@ import javax.validation.Valid;
 
 import org.springframework.web.bind.annotation.RestController;
 import indi.mat.design.controller.BaseController;
+
+import static java.util.Arrays.asList;
 
 /**
  * <p>
@@ -56,5 +60,12 @@ public class CasbinRuleController extends BaseController {
         return Response.SUCCESS(service.deleteById(id));
     }
 
+    @GetMapping("loadPolicy")
+    public Response<String[]> loadPolicy(){
+        Enforcer e = new Enforcer("examples/rbac_model.conf", "examples/rbac_policy.csv");
+
+        String[] str = service.loadPolicy(e.getModel());
+        return Response.SUCCESS(str);
+    }
 
 }
