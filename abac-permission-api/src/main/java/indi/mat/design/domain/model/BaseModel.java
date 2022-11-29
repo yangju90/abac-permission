@@ -12,7 +12,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
  */
 public class BaseModel {
     // ID
-    @TableId
+    @TableId(type = IdType.AUTO)
     @Schema(accessMode = Schema.AccessMode.READ_ONLY)
     private Long id;
 
