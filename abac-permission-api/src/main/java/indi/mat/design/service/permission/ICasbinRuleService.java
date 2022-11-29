@@ -15,6 +15,4 @@ import org.casbin.jcasbin.model.Model;
  * @since 2022-11-26
  */
 public interface ICasbinRuleService extends IBaseService<CasbinRule, CasbinRuleForm, CasbinRuleQuery> {
-
-    String[] loadPolicy(Model model);
 }

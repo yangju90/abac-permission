@@ -13,6 +13,6 @@ import indi.mat.design.service.IBaseService;
  * @author Mat
  * @since 2022-11-29
  */
-public interface ITrdPartyService extends IBaseService<TrdParty,TrdPartyForm,TrdPartyQuery> {
-
+public interface ITrdPartyService extends IBaseService<TrdParty, TrdPartyForm, TrdPartyQuery> {
+    TrdParty getTrdPartyAccountId(Long accountId);
 }

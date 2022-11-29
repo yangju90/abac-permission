@@ -1,11 +1,13 @@
 package indi.mat.design.controller.permission;
 
 
+import indi.mat.design.casbin.EnforcerAdapter;
 import indi.mat.design.domain.model.permission.CasbinRule;
 import indi.mat.design.dto.request.permission.form.CasbinRuleForm;
 import indi.mat.design.dto.request.permission.query.CasbinRuleQuery;
 import indi.mat.design.dto.response.Response;
 import indi.mat.design.service.permission.ICasbinRuleService;
+import indi.mat.design.util.EnforcerUtils;
 import org.casbin.adapter.MybatisAdapter;
 import org.casbin.jcasbin.main.Enforcer;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +19,8 @@ import javax.validation.Valid;
 
 import org.springframework.web.bind.annotation.RestController;
 import indi.mat.design.controller.BaseController;
+
+import java.util.List;
 
 import static java.util.Arrays.asList;
 
@@ -34,6 +38,9 @@ public class CasbinRuleController extends BaseController {
 
     @Autowired
     private ICasbinRuleService service;
+
+    @Autowired
+    EnforcerAdapter adapter;
 
     @GetMapping("{id}")
     public Response<CasbinRule> getById(@PathVariable("id") Long id) {
@@ -61,11 +68,19 @@ public class CasbinRuleController extends BaseController {
     }
 
     @GetMapping("loadPolicy")
-    public Response<String[]> loadPolicy(){
-        Enforcer e = new Enforcer("examples/rbac_model.conf", "examples/rbac_policy.csv");
+    public Response<List<CasbinRule>> loadPolicy() {
+        Enforcer e = new Enforcer("examples/rbac_model.conf", adapter);
+        e.clearPolicy();
+        adapter.loadPolicy(e.getModel());
+        return Response.SUCCESS(EnforcerUtils.modelToPolicyLines(e.getModel()));
+    }
 
-        String[] str = service.loadPolicy(e.getModel());
-        return Response.SUCCESS(str);
+
+    public Response<List<CasbinRule>> savePolicy() {
+        Enforcer e = new Enforcer("examples/rbac_model.conf", adapter);
+        e.clearPolicy();
+        adapter.loadPolicy(e.getModel());
+        return Response.SUCCESS(EnforcerUtils.modelToPolicyLines(e.getModel()));
     }
 
 }

@@ -1,7 +1,9 @@
 package indi.mat.design.service.user.impl;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import indi.mat.design.domain.model.permission.MetaData;
 import indi.mat.design.domain.model.user.TrdParty;
 import indi.mat.design.domain.persist.user.TrdPartyMapper;
 import indi.mat.design.dto.request.user.form.TrdPartyForm;
@@ -39,4 +41,11 @@ public class TrdPartyServiceImpl extends BaseServiceImpl<TrdParty, TrdPartyForm,
         return new TrdParty();
     }
 
+    @Override
+    public TrdParty getTrdPartyAccountId(Long accountId) {
+        LambdaQueryWrapper<TrdParty> wapper = new LambdaQueryWrapper<>();
+        wapper.eq(TrdParty :: getAccountId, accountId);
+        TrdParty trdParty = mapper.selectOne(wapper);
+        return trdParty;
+    }
 }

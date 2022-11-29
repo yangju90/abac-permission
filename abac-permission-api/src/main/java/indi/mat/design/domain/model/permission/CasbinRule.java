@@ -47,48 +47,55 @@ public class CasbinRule extends BaseModel implements Serializable {
     public void setPtype(String ptype) {
         this.ptype = ptype;
     }
-    public String getv0() {
+
+    public String getV0() {
         return v0;
     }
 
-    public void setv0(String v0) {
+    public void setV0(String v0) {
         this.v0 = v0;
     }
-    public String getv1() {
+
+    public String getV1() {
         return v1;
     }
 
-    public void setv1(String v1) {
+    public void setV1(String v1) {
         this.v1 = v1;
     }
-    public String getv2() {
+
+    public String getV2() {
         return v2;
     }
 
-    public void setv2(String v2) {
+    public void setV2(String v2) {
         this.v2 = v2;
     }
-    public String getv3() {
+
+    public String getV3() {
         return v3;
     }
 
-    public void setv3(String v3) {
+    public void setV3(String v3) {
         this.v3 = v3;
     }
-    public String getv4() {
+
+    public String getV4() {
         return v4;
     }
 
-    public void setv4(String v4) {
+    public void setV4(String v4) {
         this.v4 = v4;
     }
-    public String getv5() {
+
+    public String getV5() {
         return v5;
     }
 
-    public void setv5(String v5) {
+    public void setV5(String v5) {
         this.v5 = v5;
     }
+
     public Integer getStatus() {
         return status;
     }

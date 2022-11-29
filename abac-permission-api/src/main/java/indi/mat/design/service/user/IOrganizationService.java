@@ -13,6 +13,7 @@ import indi.mat.design.service.IBaseService;
  * @author Mat
  * @since 2022-11-29
  */
-public interface IOrganizationService extends IBaseService<Organization,OrganizationForm,OrganizationQuery> {
+public interface IOrganizationService extends IBaseService<Organization, OrganizationForm, OrganizationQuery> {
+    Organization getOrganizationByAccountId(Long accountId);
 
 }

@@ -1,8 +1,12 @@
 package indi.mat.design.service.user.impl;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.sun.org.apache.xpath.internal.operations.Or;
+import indi.mat.design.domain.model.permission.MetaData;
 import indi.mat.design.domain.model.user.Organization;
+import indi.mat.design.domain.model.user.TrdParty;
 import indi.mat.design.domain.persist.user.OrganizationMapper;
 import indi.mat.design.dto.request.user.form.OrganizationForm;
 import indi.mat.design.dto.request.user.query.OrganizationQuery;
@@ -39,4 +43,11 @@ public class OrganizationServiceImpl extends BaseServiceImpl<Organization, Organ
         return new Organization();
     }
 
+    @Override
+    public Organization getOrganizationByAccountId(Long accountId) {
+        LambdaQueryWrapper<Organization> wapper = new LambdaQueryWrapper<>();
+        wapper.eq(Organization:: getAccountId, accountId);
+        Organization organization= mapper.selectOne(wapper);
+        return organization;
+    }
 }
