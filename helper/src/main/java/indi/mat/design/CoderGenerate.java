@@ -13,7 +13,7 @@ public class CoderGenerate {
 
     static String moduleName = "user";
 
-    static String[] tableName = {"t_casbin_rule", "t_role"};
+    static String[] tableName = {"t_user", "t_account", "t_trd_party", "t_organization", "t_organization_role", "t_application"};
 
     public static void main(String[] args) {
         // 代码生成器

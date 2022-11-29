@@ -55,7 +55,7 @@ CREATE TABLE `t_user` (
   `last_edit_date` bigint DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `ix_user_username` (`username`),
-  UNIQUE KEY `ix_user_email` (`email`),
+  UNIQUE KEY `ix_user_email` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='User';
 
 
@@ -76,7 +76,7 @@ CREATE TABLE `t_account` (
   `in_date` bigint NOT NULL,
   `last_edit_user` varchar(200) DEFAULT NULL,
   `last_edit_date` bigint DEFAULT NULL,
-  PRIMARY KEY (`id`),
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Account';
 
 DROP TABLE IF EXISTS `t_trd_party`;
@@ -94,7 +94,7 @@ CREATE TABLE `t_trd_party` (
   `in_date` bigint NOT NULL,
   `last_edit_user` varchar(200) DEFAULT NULL,
   `last_edit_date` bigint DEFAULT NULL,
-  PRIMARY KEY (`id`),
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='3rd-Party';
 
 
@@ -112,7 +112,7 @@ CREATE TABLE `t_organization` (
   `last_edit_user` varchar(200) DEFAULT NULL,
   `last_edit_date` bigint DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `ix_organization_name` (`name`),
+  UNIQUE KEY `ix_organization_name` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Organization';
 
 DROP TABLE IF EXISTS `t_organization_role`;
@@ -127,8 +127,7 @@ CREATE TABLE `t_organization_role` (
   `in_date` bigint NOT NULL,
   `last_edit_user` varchar(200) DEFAULT NULL,
   `last_edit_date` bigint DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `ix_organization_name` (`name`),
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Organization Role';
 
 
@@ -143,21 +142,7 @@ CREATE TABLE `t_application` (
   `in_date` bigint NOT NULL,
   `last_edit_user` varchar(200) DEFAULT NULL,
   `last_edit_date` bigint DEFAULT NULL,
-  PRIMARY KEY (`id`),
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Application Info';
-
-DROP TABLE IF EXISTS `t_application`;
-CREATE TABLE `t_application` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `name` varchar(20) NOT NULL,
-
-  `status` tinyint DEFAULT '1' COMMENT '1: active 0: Inactive',
-  `deleted` tinyint NOT NULL DEFAULT '0',
-  `in_user` varchar(200) NOT NULL,
-  `in_date` bigint NOT NULL,
-  `last_edit_user` varchar(200) DEFAULT NULL,
-  `last_edit_date` bigint DEFAULT NULL,
-  PRIMARY KEY (`id`),
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Application Info';
 
 

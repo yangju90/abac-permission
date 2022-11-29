@@ -3,7 +3,7 @@ package indi.mat.design.service.permission;
 import indi.mat.design.domain.model.permission.CasbinRule;
 import indi.mat.design.dto.request.permission.form.CasbinRuleForm;
 import indi.mat.design.dto.request.permission.query.CasbinRuleQuery;
-import indi.mat.design.service.BaseService;
+import indi.mat.design.service.IBaseService;
 import org.casbin.jcasbin.model.Model;
 
 /**
@@ -14,7 +14,7 @@ import org.casbin.jcasbin.model.Model;
  * @author Mat
  * @since 2022-11-26
  */
-public interface ICasbinRuleService extends BaseService<CasbinRule, CasbinRuleForm, CasbinRuleQuery> {
+public interface ICasbinRuleService extends IBaseService<CasbinRule, CasbinRuleForm, CasbinRuleQuery> {
 
     String[] loadPolicy(Model model);
 }

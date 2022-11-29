@@ -40,9 +40,9 @@ import lombok.experimental.Accessors;
 @Schema(description="${entity}对象: ${table.comment!}")
 </#if>
 <#if superEntityClass??>
-public class ${entity} extends ${superEntityClass}<#if activeRecord><${entity}></#if> {
+public class ${entity} extends ${superEntityClass}<#if activeRecord><${entity}></#if> implements Serializable {
 <#elseif activeRecord>
-public class ${entity} extends Model<${entity}> {
+public class ${entity} extends Model<${entity}>  {
 <#else>
 public class ${entity} implements Serializable {
 </#if>

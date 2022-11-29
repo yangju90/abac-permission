@@ -11,7 +11,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
-public interface BaseService<T extends BaseModel, F extends BaseForm, Q extends BaseQuery<T>> {
+public interface IBaseService<T extends BaseModel, F extends BaseForm, Q extends BaseQuery<T>> {
     /**
      * 插入一条记录
      *

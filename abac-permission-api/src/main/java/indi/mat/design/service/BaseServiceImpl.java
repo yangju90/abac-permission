@@ -27,9 +27,9 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
-public abstract class BaseServiceImpl<T extends BaseModel, F extends BaseForm, Q extends BaseQuery<T>> implements BaseService<T, F, Q> {
+public abstract class BaseServiceImpl<T extends BaseModel, F extends BaseForm, Q extends BaseQuery<T>> implements IBaseService<T, F, Q> {
 
-    private static final Logger logger = LoggerFactory.getLogger(BaseService.class);
+    private static final Logger logger = LoggerFactory.getLogger(IBaseService.class);
 
     protected abstract BaseMapper<T> mapper();
 
