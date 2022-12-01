@@ -6,6 +6,10 @@ spring:
     password: 123456
 
 mybatis-plus:
+  global-config:
+    banner: false
+    db-config:
+      update-strategy: IGNORED # 全字段更新
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
