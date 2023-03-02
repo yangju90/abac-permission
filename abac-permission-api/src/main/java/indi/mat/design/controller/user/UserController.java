@@ -7,6 +7,8 @@ import indi.mat.design.domain.model.user.User;
 import indi.mat.design.dto.request.user.form.UserForm;
 import indi.mat.design.dto.request.user.query.UserQuery;
 import indi.mat.design.dto.response.Response;
+import indi.mat.design.qualifier.InjectObject;
+import indi.mat.design.qualifier.InjectToListBeanConfig;
 import indi.mat.design.service.user.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -27,6 +29,18 @@ public class UserController extends BaseController {
 
     @Autowired
     private IUserService service;
+
+    @Autowired
+    InjectToListBeanConfig config;
+
+    @GetMapping("config")
+    public Response<Object> getConfig(){
+        for(InjectObject object: config.getList()){
+            System.out.println(object.get());
+        }
+
+        return Response.SUCCESS(config.getList().size());
+    }
 
     @GetMapping("{id}")
     public Response<User> getById(@PathVariable("id") Long id) {

@@ -42,7 +42,7 @@ public class WebConfig implements WebMvcConfigurer, ApplicationContextAware, App
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new PermissionInterceptor(adapter, service)).addPathPatterns("/**");
+        registry.addInterceptor(new PermissionInterceptor(adapter, service)).addPathPatterns("/**").excludePathPatterns(new String[]{"/api/user/user/config"});
     }
 
 
